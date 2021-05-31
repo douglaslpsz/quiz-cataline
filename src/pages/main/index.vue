@@ -38,10 +38,7 @@ export default ({
 }
 
 .text-part {
-  width: 293px;
-  display: grid;
-  justify-content: center;
-  margin-top: 18px;
+  padding: 1.1rem 1.875rem 2.125rem;
 }
 
 .text-title {
@@ -49,7 +46,8 @@ export default ({
 }
 
 .text-content {
-      font-size: .813rem;
+  font-size: .813rem;
+  padding-top: .288rem;
 }
 
 </style>
