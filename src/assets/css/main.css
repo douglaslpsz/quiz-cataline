@@ -11,7 +11,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 7px;
-  background: #FFF;
+  background: rgb(192, 192, 192);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -48,11 +48,16 @@ a {
 }
 
 .btn-arrow {
+  height: 30px;
   padding: 0.275rem .555rem;
   cursor: pointer;
   background-color: transparent;
   border-radius: 8px;
   transition: background-color .2s ease-in-out;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-arrow:hover {

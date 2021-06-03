@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="content">
-      <component :is="'Questions'"/>
+      <component :is="'Asnwer'"/>
     </div>
   </div>
   
@@ -9,15 +9,15 @@
 
 <script>
 //import Main from "./pages/main"
-import Questions from "./pages/questions"
-//import Asnwer from "./pages/answer"
+//import Questions from "./pages/questions"
+import Asnwer from "./pages/answer"
 
 export default {
   name: "App",
   components: {
     //Main,
-    Questions,
-    //Asnwer,
+    //Questions,
+    Asnwer,
     
   },
 };

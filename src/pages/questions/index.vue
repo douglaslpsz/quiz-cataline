@@ -1,8 +1,10 @@
 <template>
   <div class="questions-page">
     <div class="heading">
-      <div class="icon-part btn-arrow">
+      <div class="icon-part">
+        <div class="btn-arrow">
           <img src="@/assets/images/arrow-left.svg" class="icon"/>
+        </div>
       </div>
       <div class="text-part">
         <h1 class="text-title">Bootcamp</h1>
