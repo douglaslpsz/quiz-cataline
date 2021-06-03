@@ -46,3 +46,17 @@ a {
   font-weight: 700;
   font-display: block;
 }
+
+.btn-arrow {
+  padding: 0.275rem .555rem;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: background-color .2s ease-in-out;
+}
+
+.btn-arrow:hover {
+  background: #26282c;
+  border-radius: 8px;
+  transition: background-color .2s ease-in-out;
+}
