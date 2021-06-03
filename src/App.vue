@@ -43,8 +43,6 @@ export default {
   
   created() {
     this.$store.dispatch('fetchFaq')
-    console.log('this.$store.getters.$allFaqs')
-    console.log(this.$store.getters.$allFaqs)
   }
 };
 </script>
