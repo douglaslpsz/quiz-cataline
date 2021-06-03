@@ -6,6 +6,20 @@ body {
   min-height: 100%;
   height: 100vh;
   margin: 0px;
+  
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background: #FFF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1b2841;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #25365a;
 }
 
 * {
