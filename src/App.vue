@@ -1,19 +1,24 @@
 <template>
   <div class="container">
     <div class="content">
-      <component :is="'Main'"/>
+      <component :is="'Questions'"/>
     </div>
   </div>
   
 </template>
 
 <script>
-import Main from "./pages/main"
+//import Main from "./pages/main"
+import Questions from "./pages/questions"
+//import Asnwer from "./pages/answer"
 
 export default {
   name: "App",
   components: {
-    Main,
+    //Main,
+    Questions,
+    //Asnwer,
+    
   },
 };
 </script>

@@ -1,13 +1,15 @@
 <template>
-  <div class="heading">
-    <div class="image-part">
-      <img src="@/assets/images/astronaut.svg" class="logo"/>
+  <div class="main-page">
+    <div class="heading">
+      <div class="image-part">
+        <img src="@/assets/images/astronaut.svg" class="logo"/>
+      </div>
+      <div class="text-part">
+        <h1 class="text-title"> Perguntas frequentes</h1>
+        <h3 class="text-content"> Escolha a categoria desejada</h3>
+      </div>
     </div>
-    <div class="text-part">
-      <h1 class="text-title"> Perguntas frequentes</h1>
-      <h3 class="text-content"> Escolha a categoria desejada</h3>
-    </div>
-    <ul class="categories mostly-customized-scrollbar">
+    <ul class="categories">
       <li class="category-item">
         <img src="@/assets/images/rocket.svg" class="icon"/>
         <p>Item</p>
@@ -46,7 +48,6 @@
       </li>
     </ul>
   </div>
-  
 </template>
 
 <script>
@@ -61,9 +62,6 @@ export default ({
 </script>
 
 <style scoped>
-.heading{
-  
-}
 
 .logo {
   margin-top: 35px;
@@ -75,9 +73,10 @@ export default ({
 }
 
 .categories {
-  height: 254px;
+  max-height: 234px;
   overflow: auto;
 }
+
 .category-item {
   display: grid;
   grid-template-columns: 1fr 6fr;
