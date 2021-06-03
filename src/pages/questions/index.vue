@@ -1,11 +1,7 @@
 <template>
   <div class="questions-page">
     <div class="heading">
-      <div class="icon-part">
-        <div class="btn-arrow">
-          <img src="@/assets/images/arrow-left.svg" class="icon"/>
-        </div>
-      </div>
+      <ArrowButton/>
       <div class="text-part">
         <h1 class="text-title">Bootcamp</h1>
         <h3 class="text-content">Selecione uma pergunta</h3>
@@ -58,11 +54,16 @@
 
 <script>
 
+import ArrowButton from "@/components/arrowButton";
+
 export default({
   data() {
     return {
       
     }
+  },
+  components: {
+    ArrowButton
   }
 })
 </script>
@@ -97,10 +98,6 @@ export default({
   align-content: center;
   padding: 2rem 1.25rem 1.875rem 1.25rem;
   border-bottom: 1px solid #404451;
-}
-
-.icon {  
-  height: 20px;
 }
 
 .icon-logo {

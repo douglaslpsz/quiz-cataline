@@ -1,11 +1,7 @@
 <template>
   <div class="answer-page">
     <div class="heading">
-      <div class="icon-part">
-        <div class="btn-arrow">
-          <img src="@/assets/images/arrow-left.svg" class="icon"/>
-        </div>
-      </div>
+      <ArrowButton/>
       <div class="text-part">
         <h3>Basecamp é gratuito?</h3>
       </div>
@@ -19,11 +15,16 @@
 
 <script>
 
+import ArrowButton from "@/components/arrowButton";
+
 export default({
   data() {
     return {
     }
   },
+  components: {
+    ArrowButton
+  }
 })
 </script>
 
@@ -41,16 +42,6 @@ export default({
   display: grid;
   align-items: center;
   padding-left: 5px;
-}
-
-.icon-part {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-}
-
-.icon {  
-  height: 20px;
 }
 
 h3 {
