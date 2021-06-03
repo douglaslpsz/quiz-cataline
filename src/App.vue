@@ -1,25 +1,51 @@
 <template>
   <div class="container">
+    
     <div class="content">
-      <component :is="'Questions'"/>
+      <component
+      :is="currentPage"
+      :id="id"
+      @openItem="openItem($event)"
+      @oldPage="oldPage($event)"/>
     </div>
   </div>
   
 </template>
 
 <script>
-//import Main from "./pages/main"
+import Main from "./pages/main"
 import Questions from "./pages/questions"
-//import Asnwer from "./pages/answer"
+import Asnwer from "./pages/answer"
 
 export default {
   name: "App",
-  components: {
-    //Main,
-    Questions,
-    //Asnwer,
-    
+  data() {
+    return {
+      currentPage: 'Main',
+      id: null
+    }
   },
+  components: {
+    Main,
+    Questions,
+    Asnwer,
+  },
+
+  methods: {
+    openItem(event) {
+      this.currentPage = event.component;
+      this.id = event.id;
+    },
+    oldPage(event) {
+      this.currentPage = event.component;
+    }
+  },
+  
+  created() {
+    this.$store.dispatch('fetchFaq')
+    console.log('this.$store.getters.$allFaqs')
+    console.log(this.$store.getters.$allFaqs)
+  }
 };
 </script>
 

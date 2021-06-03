@@ -2,67 +2,46 @@
   <div class="main-page">
     <div class="heading">
       <div class="image-part">
-        <img src="@/assets/images/astronaut.svg" class="logo"/>
+        <img src="@/assets/images/astronaut.svg" class="logo" />
       </div>
       <div class="text-part">
-        <h1 class="text-title"> Perguntas frequentes</h1>
-        <h3 class="text-content"> Escolha a categoria desejada</h3>
+        <h1 class="text-title">Perguntas frequentes</h1>
+        <h3 class="text-content">Escolha a categoria desejada</h3>
       </div>
     </div>
     <ul class="categories">
-      <li class="category-item">
-        <img src="@/assets/images/rocket.svg" class="icon"/>
-        <p>Item</p>
-      </li>
-      <li class="category-item">
-        <img src="@/assets/images/rocket.svg" class="icon"/>
-        <p>Item</p>
-      </li>
-      <li class="category-item">
-        <img src="@/assets/images/rocket.svg" class="icon"/>
-        <p>Item</p>
-      </li>
-      <li class="category-item">
-        <img src="@/assets/images/rocket.svg" class="icon"/>
-        <p>Item</p>
-      </li>
-      <li class="category-item">
-        <img src="@/assets/images/rocket.svg" class="icon"/>
-        <p>Item</p>
-      </li>
-      <li class="category-item">
-        <img src="@/assets/images/rocket.svg" class="icon"/>
-        <p>Item</p>
-      </li>
-      <li class="category-item">
-        <img src="@/assets/images/rocket.svg" class="icon"/>
-        <p>Item</p>
-      </li>
-      <li class="category-item">
-        <img src="@/assets/images/rocket.svg" class="icon"/>
-        <p>Item</p>
-      </li>
-      <li class="category-item">
-        <img src="@/assets/images/rocket.svg" class="icon"/>
-        <p>Item</p>
+      <li
+        v-for="faq in $allFaqs"
+        :key="faq.id"
+        class="category-item"
+        @click="$emit('openItem', { id: faq.id, component: 'Questions' })"
+      >
+        <img :src="getImgUrl(faq.icon)"  class="icon" />
+        <p>{{ faq.title }}</p>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-
-
-export default ({
+export default {
   data() {
-    return {
-    }
+    return {}
   },
-})
+  methods: {
+    getImgUrl(pic) {
+      return require(`@/assets/images/${pic}`)
+    },
+  },
+  computed: {
+    $allFaqs() {
+      return this.$store.getters.$allFaqs
+    }
+  }
+}
 </script>
 
 <style scoped>
-
 .logo {
   margin-top: 35px;
   width: 242px;
@@ -89,8 +68,8 @@ export default ({
 
 .category-item:hover {
   cursor: pointer;
-  background: #3F4452;
-  transition: background-color .2s ease-in-out;
+  background: #3f4452;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .image-part {
@@ -107,8 +86,7 @@ export default ({
 }
 
 .text-content {
-  font-size: .813rem;
-  padding-top: .288rem;
+  font-size: 0.813rem;
+  padding-top: 0.288rem;
 }
-
 </style>

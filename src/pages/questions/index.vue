@@ -1,52 +1,23 @@
 <template>
   <div class="questions-page">
     <div class="heading">
-      <ArrowButton/>
+      <ArrowButton @click="$emit('oldPage', { component: 'Main' })"/>
       <div class="text-part">
         <h1 class="text-title">Bootcamp</h1>
         <h3 class="text-content">Selecione uma pergunta</h3>
       </div>
       <div class="icon-part">
-        <img src="@/assets/images/rocket.svg" class="icon-logo"/>
+        <img :src="getImgUrl($faqById.icon)" class="icon-logo"/>
       </div>
     </div>
 
     <ul class="questions">
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
-      </li>
-      <li class="question-item">
-        <p>Texto texto texto texto</p>
+      <li
+        class="question-item"
+        v-for="faq in $faqById.questions"
+        :key="faq.id"
+      >
+        <p>{{ faq.title }}</p>
       </li>
     </ul>
   </div>
@@ -62,9 +33,25 @@ export default({
       
     }
   },
+  props: {
+    id: {
+      type: Number,
+      default: null
+    }
+  },
   components: {
     ArrowButton
-  }
+  },
+  computed: {
+    $faqById() {
+      return this.$store.getters.$faqById(this.id)
+    }
+  },
+  methods: {
+    getImgUrl(pic) {
+      return require(`@/assets/images/${pic}`)
+    },
+  },
 })
 </script>
 
