@@ -7,28 +7,44 @@
       <h1 class="text-title"> Perguntas frequentes</h1>
       <h3 class="text-content"> Escolha a categoria desejada</h3>
     </div>
-
-    <div class="categories-div">
-      <ul class="categories">
-        <li class="category-item">
-          <img src="@/assets/images/rocket.svg" class="icon"/>
-          <p>Item</p>
-        </li>
-        <li class="category-item">
-          <img src="@/assets/images/rocket.svg" class="icon"/>
-          <p>Item</p>
-        </li>
-        <li class="category-item">
-          <img src="@/assets/images/rocket.svg" class="icon"/>
-          <p>Item</p>
-        </li>
-        <li class="category-item">
-          <img src="@/assets/images/rocket.svg" class="icon"/>
-          <p>Item</p>
-        </li>
-      </ul>
-    </div>
-
+    <ul class="categories mostly-customized-scrollbar">
+      <li class="category-item">
+        <img src="@/assets/images/rocket.svg" class="icon"/>
+        <p>Item</p>
+      </li>
+      <li class="category-item">
+        <img src="@/assets/images/rocket.svg" class="icon"/>
+        <p>Item</p>
+      </li>
+      <li class="category-item">
+        <img src="@/assets/images/rocket.svg" class="icon"/>
+        <p>Item</p>
+      </li>
+      <li class="category-item">
+        <img src="@/assets/images/rocket.svg" class="icon"/>
+        <p>Item</p>
+      </li>
+      <li class="category-item">
+        <img src="@/assets/images/rocket.svg" class="icon"/>
+        <p>Item</p>
+      </li>
+      <li class="category-item">
+        <img src="@/assets/images/rocket.svg" class="icon"/>
+        <p>Item</p>
+      </li>
+      <li class="category-item">
+        <img src="@/assets/images/rocket.svg" class="icon"/>
+        <p>Item</p>
+      </li>
+      <li class="category-item">
+        <img src="@/assets/images/rocket.svg" class="icon"/>
+        <p>Item</p>
+      </li>
+      <li class="category-item">
+        <img src="@/assets/images/rocket.svg" class="icon"/>
+        <p>Item</p>
+      </li>
+    </ul>
   </div>
   
 </template>
@@ -58,10 +74,10 @@ export default ({
   width: 1.5rem;
 }
 
-.categories-div {
-  margin: 0px 1.875rem;
+.categories {
+  height: 254px;
+  overflow: auto;
 }
-
 .category-item {
   display: grid;
   grid-template-columns: 1fr 6fr;
@@ -69,6 +85,13 @@ export default ({
   padding-top: 1rem;
   padding-bottom: 1rem;
   align-content: center;
+  padding: 0.875rem 1.875rem;
+}
+
+.category-item:hover {
+  cursor: pointer;
+  background: #3F4452;
+  transition: background-color .2s ease-in-out;
 }
 
 .image-part {
