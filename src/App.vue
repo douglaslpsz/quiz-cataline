@@ -5,6 +5,7 @@
       <component
       :is="currentPage"
       :id="id"
+      :questionId="questionId"
       @openItem="openItem($event)"
       @oldPage="oldPage($event)"/>
     </div>
@@ -22,7 +23,8 @@ export default {
   data() {
     return {
       currentPage: 'Main',
-      id: null
+      id: null,
+      questionId: null
     }
   },
   components: {
@@ -35,6 +37,13 @@ export default {
     openItem(event) {
       this.currentPage = event.component;
       this.id = event.id;
+
+      if(event.questionId) {
+        this.questionId = event.questionId;
+      } else {
+        this.questionId = null;
+      }
+      
     },
     oldPage(event) {
       this.currentPage = event.component;

@@ -22,9 +22,11 @@ export default createStore({
     },
     $faqById: (state) => (id) => {
       return state.faq.find(x => x.id === id)
-    }/*,
-    $faqById( id, state) {
-     return state.faq.filter( (x) => x.id == id)
-    }*/
+    },
+    $faqQuestion: (state) => (idItem, idQuestion) => {
+      let item = state.faq.find(x => x.id === idItem);
+      const question = item.questions.find(x => x.id === idQuestion);
+      return question;
+    }
   },
 });

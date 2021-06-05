@@ -1,14 +1,12 @@
 <template>
   <div class="answer-page">
     <div class="heading">
-      <ArrowButton/>
+      <ArrowButton  @click="$emit('openItem', { id: 1, component: 'Questions' })"/>
       <div class="text-part">
-        <h3>Basecamp é gratuito?</h3>
+        <h3>{{ $faqQuestion.title }}</h3>
       </div>
     </div>
-
-    <p class="text-content" >
-      O <a href='https://www.cataline.io/basecamp' target='_blank'>Basecamp</a> é o nosso campo de base, onde você encontra cursos gratuitos focados em tudo o que você precisa para ser um ótimo programador e conquistar uma base sólida no assunto.
+    <p v-html="$faqQuestion.content" class="text-content" >
     </p>
   </div>
 </template>
@@ -24,7 +22,22 @@ export default({
   },
   components: {
     ArrowButton
-  }
+  },
+  props: {
+    id: {
+      type: Number,
+      default: null
+    },
+    questionId: {
+      type: Number,
+      default: null
+    }
+  },
+  computed: {
+    $faqQuestion() {
+      return this.$store.getters.$faqQuestion(this.id, this.questionId)
+    }
+  },
 })
 </script>
 

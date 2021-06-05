@@ -16,6 +16,7 @@
         class="question-item"
         v-for="faq in $faqById.questions"
         :key="faq.id"
+        @click="$emit('openItem', { id: $faqById.id, questionId: faq.id, component: 'Asnwer' })"
       >
         <p>{{ faq.title }}</p>
       </li>
