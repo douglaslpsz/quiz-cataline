@@ -3,7 +3,7 @@
     <div class="heading">
       <ArrowButton @click="$emit('oldPage', { component: 'Main' })"/>
       <div class="text-part">
-        <h1 class="text-title">Bootcamp</h1>
+        <h1 class="text-title">{{ $faqById.title }}</h1>
         <h3 class="text-content">Selecione uma pergunta</h3>
       </div>
       <div class="icon-part">
