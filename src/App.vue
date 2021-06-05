@@ -2,12 +2,15 @@
   <div class="container">
     
     <div class="content">
-      <component
-      :is="currentPage"
-      :id="id"
-      :questionId="questionId"
-      @openItem="openItem($event)"
-      @oldPage="oldPage($event)"/>
+      <transition :name="'component-fade'" mode="out-in">
+        <component
+          :is="currentPage"
+          :id="id"
+          :questionId="questionId"
+          @openItem="openItem($event)"
+          @oldPage="oldPage($event)"
+        />
+      </transition>
     </div>
   </div>
   
@@ -74,4 +77,13 @@ export default {
   justify-content: center;
   align-content: center;
 }
+
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 </style>
